@@ -30,7 +30,6 @@ def main():
     if DATA_PATH is None:
         raise FileNotFoundError(
             "Không tìm thấy file Tweets.csv. Hãy kiểm tra lại đường dẫn.\n"
-            "Ví dụ: data/Tweets.csv"
         )
 
     df = pd.read_csv(DATA_PATH)
@@ -173,7 +172,7 @@ def main():
     res_df = pd.DataFrame(results, columns=["Model", "Accuracy"]).sort_values(
         "Accuracy", ascending=False
     )
-    print("\n📊 So sánh Accuracy:")
+    print("\nSo sánh Accuracy:")
     print(res_df)
 
     # ===== 9. Confusion Matrix model tốt nhất =====
@@ -247,10 +246,6 @@ def main():
     print("\n===== SUMMARY (copy vào báo cáo) =====")
     for k, v in summary.items():
         print(f"{k}: {v}")
-    print(
-        "Gợi ý insight: Negative chiếm tỷ lệ lớn; lý do top thường là 'Late Flight', "
-        "'Customer Service Issue'; hãng có tỷ lệ negative cao; tweet negative thường dài hơn."
-    )
 
 
 if __name__ == "__main__":
